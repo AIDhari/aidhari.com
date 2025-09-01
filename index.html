@@ -3,207 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI Dhari</title>
+  <title>AI Dhari – Enterprise AI Solutions</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
+    /* Reset + Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; line-height: 1.6; color: #333; background: #fff; }
+    a { text-decoration: none; color: inherit; }
+
+    /* Navbar */
+    header {
       background: #fff;
-      color: #000;
-      scroll-behavior: smooth;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .logo { display: flex; align-items: center; }
+    .logo img { height: 36px; margin-right: 8px; }
+    .logo span { font-size: 20px; font-weight: bold; color: #0d1b2a; }
+
+    nav { display: flex; gap: 20px; }
+    nav a { font-weight: 500; }
+    .btn {
+      background: #007bff; color: #fff; padding: 8px 16px; border-radius: 6px;
     }
 
-    /* Header */
-    header.topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 15px 40px;
-      background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
-    header.topbar .logo {
-      display: flex;
-      align-items: center;
-    }
-    header.topbar .logo img {
-      height: 34px;
-      margin-right: 8px;
-    }
-    header.topbar .logo span {
-      font-size: 20px;
-      font-weight: bold;
-      color: #0d1b2a;
-    }
-    header.topbar nav {
-      display: flex;
-      flex-wrap: wrap;
-    }
-    header.topbar nav a {
-      margin: 0 12px;
-      text-decoration: none;
-      color: #000;
-      font-weight: 500;
-    }
-    header.topbar nav a.demo-btn {
-      background: #007bff;
-      color: #fff;
-      padding: 8px 15px;
-      border-radius: 6px;
+    /* Mobile Menu */
+    .menu-toggle { display: none; cursor: pointer; font-size: 22px; }
+    @media(max-width: 768px) {
+      nav { display: none; flex-direction: column; background: #fff; width: 100%; padding: 15px; }
+      nav.active { display: flex; }
+      .menu-toggle { display: block; }
     }
 
     /* Hero */
     .hero {
-      display: flex;
-      justify-content: center;
+      display: flex; flex-wrap: wrap;
+      justify-content: center; align-items: center;
       padding: 80px 20px;
+      background: linear-gradient(to right, #eef6ff, #ffffff);
     }
-    .hero-card {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: center;
-      gap: 40px;
-      background: #fff;
-      padding: 60px;
-      border-radius: 20px;
-      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
-      max-width: 1100px;
-      width: 100%;
-    }
-    .hero img {
-      max-width: 280px;
-      height: auto;
-      margin: auto;
-      display: block;
-    }
-    .hero h1 {
-      font-size: 44px;
-      font-weight: bold;
-      margin-bottom: 20px;
-      color: #0d1b2a;
-    }
-    .hero p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 30px;
-      color: #333;
-    }
-    .ctaRow a {
-      display: inline-block;
-      margin-right: 12px;
-      padding: 12px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-    .ctaRow .cta {
-      background: #007bff;
-      color: #fff;
-    }
-    .ctaRow .ghost {
-      background: #f2f2f2;
-      color: #000;
-    }
+    .hero img { max-width: 280px; height: auto; margin: 20px; }
+    .hero-text { max-width: 500px; padding: 20px; }
+    .hero-text h1 { font-size: 40px; margin-bottom: 20px; color: #0d1b2a; }
+    .hero-text p { font-size: 18px; margin-bottom: 30px; }
+    .hero-text .btn { margin-right: 10px; }
 
     /* Sections */
-    section.content-section {
-      padding: 80px 20px;
-      text-align: center;
-    }
-    section.content-section h2 {
-      font-size: 32px;
-      margin-bottom: 20px;
-      color: #0d1b2a;
-    }
-    section.content-section p {
-      font-size: 18px;
-      max-width: 800px;
-      margin: auto;
-      line-height: 1.6;
-      color: #444;
-    }
+    section { padding: 80px 20px; text-align: center; }
+    section h2 { font-size: 32px; margin-bottom: 20px; color: #0d1b2a; }
+    section p { font-size: 18px; max-width: 800px; margin: auto; color: #444; }
 
-    /* Responsive */
-    @media (max-width: 900px) {
-      .hero-card {
-        grid-template-columns: 1fr;
-        text-align: center;
-        padding: 40px 20px;
-      }
-      .hero h1 {
-        font-size: 32px;
-      }
-      .hero p {
-        font-size: 16px;
-      }
-      header.topbar {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 15px 20px;
-      }
-      header.topbar nav {
-        flex-wrap: wrap;
-        margin-top: 10px;
-      }
-      header.topbar nav a {
-        margin: 5px 10px;
-      }
+    /* Footer */
+    footer {
+      background: #0d1b2a; color: #fff; text-align: center;
+      padding: 20px; margin-top: 40px;
     }
+    footer a { color: #fff; font-weight: bold; }
   </style>
 </head>
 <body>
-  <!-- HEADER -->
-  <header class="topbar">
+
+  <!-- Navbar -->
+  <header>
     <div class="logo">
-      <img src="images/logo-exact.png" alt="AI Dhari logo small">
+      <img src="images/logo-exact.png" alt="AI Dhari Logo">
       <span>AI Dhari</span>
     </div>
+    <div class="menu-toggle">☰</div>
     <nav>
+      <a href="#about">About</a>
       <a href="#platform">Platform</a>
       <a href="#solutions">Solutions</a>
       <a href="#customers">Customers</a>
       <a href="#resources">Resources</a>
-      <a href="#company">Company</a>
-      <a class="demo-btn" href="mailto:info@aidhari.in">Request Demo</a>
+      <a href="#contact" class="btn">Contact</a>
     </nav>
   </header>
 
-  <!-- HERO -->
+  <!-- Hero -->
   <section class="hero">
-    <div class="hero-card">
-      <!-- Left: Logo -->
-      <div>
-        <img src="images/logo-exact.png" alt="AI Dhari logo">
-      </div>
-      <!-- Right: Text -->
-      <div>
-        <h1>Enterprise Conversational AI Platform</h1>
-        <p>
-          Design, build and deploy intelligent virtual assistants for your contact center and digital experiences.  
-          Omnichannel, secure and measurable—powered by LLMs with enterprise guardrails.
-        </p>
-        <div class="ctaRow">
-          <a class="cta" href="mailto:info@aidhari.in">Request a Demo</a>
-          <a class="ghost" href="#platform">See the Platform</a>
-        </div>
-      </div>
+    <img src="images/logo-exact.png" alt="AI Dhari">
+    <div class="hero-text">
+      <h1>Enterprise Conversational AI Platform</h1>
+      <p>We design, build and deploy intelligent virtual assistants for enterprises. Secure, scalable and measurable — powered by AI Dhari.</p>
+      <a href="#platform" class="btn">See the Platform</a>
+      <a href="#contact" class="btn" style="background:#444;">Request Demo</a>
     </div>
   </section>
 
-  <!-- PLATFORM -->
-  <section id="platform" class="content-section">
-    <h2>Platform</h2>
-    <p>Everything you need to build high-quality assistants at scale.</p>
+  <!-- About -->
+  <section id="about">
+    <h2>About Us</h2>
+    <p>AI Dhari is an AI-first company delivering enterprise-grade conversational AI platforms. We help businesses automate customer support, streamline workflows, and provide personalized experiences using advanced LLMs with enterprise security and compliance.</p>
   </section>
 
-  <!-- SOLUTIONS -->
-  <section id="solutions" class="content-section">
+  <!-- Platform -->
+  <section id="platform">
+    <h2>Our Platform</h2>
+    <p>Omnichannel AI assistants built to integrate seamlessly with your existing tools. With analytics, security guardrails, and customization, our platform empowers enterprises to scale AI safely.</p>
+  </section>
+
+  <!-- Solutions -->
+  <section id="solutions">
     <h2>Solutions</h2>
-    <p>Custom AI solutions tailored to your industry and needs.</p>
+    <p>From contact centers to digital self-service, AI Dhari powers solutions across industries including BFSI, Healthcare, Retail, and Telecom.</p>
   </section>
 
-  <!-- CUSTOMERS -->
+  <!-- Customers -->
+  <section id="customers">
+    <h2>Our Customers</h2>
+    <p>Trusted by leading global enterprises to deliver exceptional customer experiences with enterprise AI at scale.</p>
+  </section>
+
+  <!-- Resources -->
+  <section id="resources">
+    <h2>Resources</h2>
+    <p>Explore case studies, whitepapers, and documentation to learn how AI Dhari can transform your business with AI-powered automation.</p>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <p>Email us at <a href="mailto:info@aidhari.in">info@aidhari.in</a> for partnerships, demos, or support.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 AI Dhari. All rights reserved.</p>
+    <p><a href="mailto:info@aidhari.in">info@aidhari.in</a></p>
+  </footer>
+
+  <script>
+    // Toggle mobile menu
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('nav');
+    toggle.addEventListener('click', () => {
+      nav.classList.toggle('active');
+    });
+  </script>
+</body>
+</html>
