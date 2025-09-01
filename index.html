@@ -1,75 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AI Dhari</title>
-
-  <!-- CSS Fixes -->
   <style>
-    /* Header Logo */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #000;
+    }
+
+    /* Header */
     header.topbar {
       display: flex;
       align-items: center;
-      padding: 10px 20px;
+      justify-content: space-between;
+      padding: 15px 40px;
       background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    header.topbar div {
+      display: flex;
+      align-items: center;
     }
     header.topbar img {
-      height: 50px;
-      width: auto;
-      margin-right: 10px;
+      height: 36px;
+      margin-right: 8px;
     }
     header.topbar span {
       font-size: 20px;
       font-weight: bold;
     }
+    header.topbar nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+    header.topbar nav a.demo-btn {
+      background: #007bff;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 6px;
+    }
 
-    /* Hero Logo */
-    .logoImg {
-      display: block;
-      margin: 0 auto 20px auto;
-      max-width: 250px;
+    /* Hero (two-column) */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      padding: 80px 10%;
+      background: linear-gradient(to bottom, #fff, #f9fbff);
+    }
+    .hero img {
+      max-width: 320px;
       height: auto;
+      margin: auto;
+      display: block;
+    }
+    .hero h1 {
+      font-size: 46px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #0d1b2a;
+    }
+    .hero p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 35px;
+      color: #333;
+    }
+    .ctaRow a {
+      display: inline-block;
+      margin-right: 12px;
+      padding: 12px 25px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+    }
+    .ctaRow .cta {
+      background: #007bff;
+      color: #fff;
+    }
+    .ctaRow .ghost {
+      background: #f2f2f2;
+      color: #000;
+    }
+
+    /* Responsive for mobile */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      header.topbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      header.topbar nav {
+        margin-top: 10px;
+      }
     }
   </style>
 </head>
 <body>
   <!-- HEADER -->
   <header class="topbar">
-    <img src="images/logo-exact.png" alt="AI Dhari logo small">
-    <span>AI Dhari</span>
-    <nav style="margin-left:auto;">
+    <div>
+      <img src="images/logo-exact.png" alt="AI Dhari logo small">
+      <span>AI Dhari</span>
+    </div>
+    <nav>
       <a href="#platform">Platform</a>
       <a href="#solutions">Solutions</a>
       <a href="#customers">Customers</a>
       <a href="#resources">Resources</a>
       <a href="#company">Company</a>
-      <a class="demo-btn" href="#contact">Request Demo</a>
+      <a class="demo-btn" href="mailto:info@aidhari.in">Request Demo</a>
     </nav>
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="home" style="text-align:center; padding:50px;">
-    <img src="images/logo-exact.png" alt="AI Dhari logo" class="logoImg">
-    <h1>Enterprise Conversational AI Platform</h1>
-    <p>
-      Design, build and deploy intelligent virtual assistants for your contact center and digital experiences.  
-      Omnichannel, secure and measurable—powered by LLMs with enterprise guardrails.
-    </p>
-    <div class="ctaRow">
-      <a class="cta" href="#contact" id="demoCta">Request a Demo</a>
-      <a class="cta ghost" href="#platform">See the Platform</a>
+  <section class="hero">
+    <!-- Left: Logo -->
+    <div>
+      <img src="images/logo-exact.png" alt="AI Dhari logo">
+    </div>
+    <!-- Right: Text -->
+    <div>
+      <h1>Enterprise Conversational AI Platform</h1>
+      <p>
+        Design, build and deploy intelligent virtual assistants for your contact center and digital experiences.  
+        Omnichannel, secure and measurable—powered by LLMs with enterprise guardrails.
+      </p>
+      <div class="ctaRow">
+        <a class="cta" href="mailto:info@aidhari.in">Request a Demo</a>
+        <a class="ghost" href="#platform">See the Platform</a>
+      </div>
     </div>
   </section>
-
-  <!-- Example placeholder for next sections -->
-  <section id="platform" style="padding:50px; text-align:center;">
-    <h2>Platform</h2>
-    <p>Everything you need to build high-quality assistants at scale.</p>
-  </section>
-
-  <footer style="text-align:center; padding:20px; background:#f8f9fa;">
-    <p>© 2025 AI Dhari. All rights reserved.</p>
-  </footer>
 </body>
 </html>
