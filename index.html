@@ -24,12 +24,67 @@
       font-weight: bold;
     }
 
+    /* Navigation */
+    nav a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #000;
+      font-weight: 500;
+    }
+    nav a.demo-btn {
+      background: #007bff;
+      color: #fff;
+      padding: 8px 15px;
+      border-radius: 5px;
+    }
+
     /* Hero Logo */
     .logoImg {
       display: block;
       margin: 0 auto 20px auto;
       max-width: 250px;
       height: auto;
+    }
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+      background: #fdfdfd;
+    }
+    .hero h1 {
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      font-size: 18px;
+      max-width: 600px;
+      margin: 0 auto 30px auto;
+      line-height: 1.5;
+    }
+    .ctaRow a {
+      display: inline-block;
+      margin: 10px;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .ctaRow .cta {
+      background: #007bff;
+      color: #fff;
+    }
+    .ctaRow .ghost {
+      background: #f2f2f2;
+      color: #000;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #f8f9fa;
+      margin-top: 50px;
     }
   </style>
 </head>
@@ -49,7 +104,7 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="home" style="text-align:center; padding:50px;">
+  <section class="hero" id="home">
     <img src="images/logo-exact.png" alt="AI Dhari logo" class="logoImg">
     <h1>Enterprise Conversational AI Platform</h1>
     <p>
@@ -62,13 +117,14 @@
     </div>
   </section>
 
-  <!-- Example placeholder for next sections -->
+  <!-- PLATFORM -->
   <section id="platform" style="padding:50px; text-align:center;">
     <h2>Platform</h2>
     <p>Everything you need to build high-quality assistants at scale.</p>
   </section>
 
-  <footer style="text-align:center; padding:20px; background:#f8f9fa;">
+  <!-- FOOTER -->
+  <footer>
     <p>© 2025 AI Dhari. All rights reserved.</p>
   </footer>
 </body>
