@@ -5,108 +5,40 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Dhari</title>
 
-  <!-- Inline CSS for GitHub Pages -->
+  <!-- CSS Fixes -->
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-      color: #000;
-    }
-
-    /* Header */
+    /* Header Logo */
     header.topbar {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      padding: 15px 40px;
+      padding: 10px 20px;
       background: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     header.topbar img {
-      height: 40px;
+      height: 50px;
       width: auto;
       margin-right: 10px;
     }
     header.topbar span {
       font-size: 20px;
       font-weight: bold;
-      vertical-align: middle;
-    }
-    header.topbar nav {
-      margin-left: auto;
-    }
-    header.topbar nav a {
-      margin: 0 15px;
-      text-decoration: none;
-      color: #000;
-      font-weight: 500;
-    }
-    header.topbar nav a.demo-btn {
-      background: #007bff;
-      color: #fff;
-      padding: 8px 15px;
-      border-radius: 5px;
     }
 
-    /* Hero Section */
-    .hero {
-      text-align: center;
-      padding: 60px 20px;
-      background: linear-gradient(to bottom, #fff, #f9fbff);
-    }
-    .hero img.logoImg {
-      max-width: 280px;
-      height: auto;
+    /* Hero Logo */
+    .logoImg {
       display: block;
-      margin: 0 auto 25px auto;
-    }
-    .hero h1 {
-      font-size: 42px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    .hero p {
-      font-size: 18px;
-      max-width: 650px;
-      margin: 0 auto 35px auto;
-      line-height: 1.6;
-    }
-    .ctaRow a {
-      display: inline-block;
-      margin: 10px;
-      padding: 12px 25px;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 16px;
-    }
-    .ctaRow .cta {
-      background: #007bff;
-      color: #fff;
-    }
-    .ctaRow .ghost {
-      background: #f2f2f2;
-      color: #000;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: #f8f9fa;
-      margin-top: 50px;
+      margin: 0 auto 20px auto;
+      max-width: 250px;
+      height: auto;
     }
   </style>
 </head>
 <body>
   <!-- HEADER -->
   <header class="topbar">
-    <div style="display:flex; align-items:center;">
-      <img src="images/logo-exact.png" alt="AI Dhari logo small">
-      <span>AI Dhari</span>
-    </div>
-    <nav>
+    <img src="images/logo-exact.png" alt="AI Dhari logo small">
+    <span>AI Dhari</span>
+    <nav style="margin-left:auto;">
       <a href="#platform">Platform</a>
       <a href="#solutions">Solutions</a>
       <a href="#customers">Customers</a>
@@ -117,7 +49,7 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="home">
+  <section class="hero" id="home" style="text-align:center; padding:50px;">
     <img src="images/logo-exact.png" alt="AI Dhari logo" class="logoImg">
     <h1>Enterprise Conversational AI Platform</h1>
     <p>
@@ -130,14 +62,13 @@
     </div>
   </section>
 
-  <!-- PLATFORM -->
+  <!-- Example placeholder for next sections -->
   <section id="platform" style="padding:50px; text-align:center;">
     <h2>Platform</h2>
     <p>Everything you need to build high-quality assistants at scale.</p>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
+  <footer style="text-align:center; padding:20px; background:#f8f9fa;">
     <p>© 2025 AI Dhari. All rights reserved.</p>
   </footer>
 </body>
