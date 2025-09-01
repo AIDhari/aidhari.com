@@ -4,13 +4,38 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>AI Dhari</title>
-  <!-- Keep your other CSS links or style tags here -->
-  <link rel="stylesheet" href="style.css" />
+
+  <!-- CSS Fixes -->
+  <style>
+    /* Header Logo */
+    header.topbar {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background: #fff;
+    }
+    header.topbar img {
+      height: 50px;
+      width: auto;
+      margin-right: 10px;
+    }
+    header.topbar span {
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    /* Hero Logo */
+    .logoImg {
+      display: block;
+      margin: 0 auto 20px auto;
+      max-width: 250px;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
   <!-- HEADER -->
   <header class="topbar">
-    <!-- Fixed logo path -->
     <img src="images/logo-exact.png" alt="AI Dhari logo small">
     <span>AI Dhari</span>
     <nav style="margin-left:auto;">
@@ -24,7 +49,7 @@
   </header>
 
   <!-- HERO -->
-  <section class="hero" id="home">
+  <section class="hero" id="home" style="text-align:center; padding:50px;">
     <img src="images/logo-exact.png" alt="AI Dhari logo" class="logoImg">
     <h1>Enterprise Conversational AI Platform</h1>
     <p>
@@ -37,14 +62,13 @@
     </div>
   </section>
 
-  <!-- PLATFORM -->
+  <!-- Example placeholder for next sections -->
   <section id="platform" style="padding:50px; text-align:center;">
     <h2>Platform</h2>
     <p>Everything you need to build high-quality assistants at scale.</p>
   </section>
 
-  <!-- FOOTER -->
-  <footer>
+  <footer style="text-align:center; padding:20px; background:#f8f9fa;">
     <p>© 2025 AI Dhari. All rights reserved.</p>
   </footer>
 </body>
