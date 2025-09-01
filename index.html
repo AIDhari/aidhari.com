@@ -21,17 +21,18 @@
       background: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
-    header.topbar div {
+    header.topbar .logo {
       display: flex;
       align-items: center;
     }
-    header.topbar img {
-      height: 36px;
+    header.topbar .logo img {
+      height: 34px;
       margin-right: 8px;
     }
-    header.topbar span {
+    header.topbar .logo span {
       font-size: 20px;
       font-weight: bold;
+      color: #0d1b2a;
     }
     header.topbar nav a {
       margin: 0 15px;
@@ -46,23 +47,32 @@
       border-radius: 6px;
     }
 
-    /* Hero (two-column) */
+    /* Hero */
     .hero {
       display: grid;
       grid-template-columns: 1fr 1fr;
       align-items: center;
       gap: 40px;
       padding: 80px 10%;
-      background: linear-gradient(to bottom, #fff, #f9fbff);
+    }
+    .hero-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 40px;
+      background: #fff;
+      padding: 60px;
+      border-radius: 20px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.08);
     }
     .hero img {
-      max-width: 320px;
+      max-width: 280px;
       height: auto;
       margin: auto;
       display: block;
     }
     .hero h1 {
-      font-size: 46px;
+      font-size: 44px;
       font-weight: bold;
       margin-bottom: 20px;
       color: #0d1b2a;
@@ -70,7 +80,7 @@
     .hero p {
       font-size: 18px;
       line-height: 1.6;
-      margin-bottom: 35px;
+      margin-bottom: 30px;
       color: #333;
     }
     .ctaRow a {
@@ -91,9 +101,9 @@
       color: #000;
     }
 
-    /* Responsive for mobile */
+    /* Responsive */
     @media (max-width: 768px) {
-      .hero {
+      .hero-card {
         grid-template-columns: 1fr;
         text-align: center;
       }
@@ -110,7 +120,7 @@
 <body>
   <!-- HEADER -->
   <header class="topbar">
-    <div>
+    <div class="logo">
       <img src="images/logo-exact.png" alt="AI Dhari logo small">
       <span>AI Dhari</span>
     </div>
@@ -126,20 +136,22 @@
 
   <!-- HERO -->
   <section class="hero">
-    <!-- Left: Logo -->
-    <div>
-      <img src="images/logo-exact.png" alt="AI Dhari logo">
-    </div>
-    <!-- Right: Text -->
-    <div>
-      <h1>Enterprise Conversational AI Platform</h1>
-      <p>
-        Design, build and deploy intelligent virtual assistants for your contact center and digital experiences.  
-        Omnichannel, secure and measurable—powered by LLMs with enterprise guardrails.
-      </p>
-      <div class="ctaRow">
-        <a class="cta" href="mailto:info@aidhari.in">Request a Demo</a>
-        <a class="ghost" href="#platform">See the Platform</a>
+    <div class="hero-card">
+      <!-- Left: Logo -->
+      <div>
+        <img src="images/logo-exact.png" alt="AI Dhari logo">
+      </div>
+      <!-- Right: Text -->
+      <div>
+        <h1>Enterprise Conversational AI Platform</h1>
+        <p>
+          Design, build and deploy intelligent virtual assistants for your contact center and digital experiences.  
+          Omnichannel, secure and measurable—powered by LLMs with enterprise guardrails.
+        </p>
+        <div class="ctaRow">
+          <a class="cta" href="mailto:info@aidhari.in">Request a Demo</a>
+          <a class="ghost" href="#platform">See the Platform</a>
+        </div>
       </div>
     </div>
   </section>
