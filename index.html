@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>AI Dhari — Enterprise Conversational AI Platform</title>
-  <meta name="description" content="AI Dhari is an enterprise conversational AI platform for contact centers and digital experiences. Design, build and deploy intelligent virtual assistants with strong security and governance." />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-  <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>AI Dhari — Enterprise Conversational AI Platform</title>
+<meta content="AI Dhari is an enterprise conversational AI platform for contact centers and digital experiences. Design, build and deploy intelligent virtual assistants with strong security and governance." name="description"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
     :root{
       --text:#0f172a;--muted:#475569;--soft:#e2e8f0;--brand1:#2b6cb0;--brand2:#3ba3ff;--radius:24px;--shadow:0 12px 40px rgba(2,6,23,.08);
       --maxw:1200px;
@@ -98,179 +99,186 @@
       .logos{grid-template-columns:repeat(3,1fr)}
     }
   </style>
-</head>
+<style>
+/* Header Logo Fix */
+header.topbar {
+  display: flex;
+  align-items: center;
+}
+
+header.topbar img {
+  height: 50px;       /* resize logo */
+  width: auto;        /* keep aspect ratio */
+  vertical-align: middle;
+  margin-right: 10px; /* space from text */
+}
+
+/* Hero Logo Fix */
+.logoImg {
+  display: block;
+  margin: 0 auto 20px auto; /* center horizontally with spacing */
+  max-width: 250px;         /* logo size */
+  height: auto;             /* keep aspect ratio */
+}
+</style></head>
 <body>
-  <!-- NAV -->
-  <header class="topbar">
-    <div class="container nav">
-      <a class="brand" href="#home" aria-label="AI Dhari Home">
-        <img src="{{ url_for('static', filename='images/logo-exact.png') }}" alt="AI Dhari logo small">
-        <span>AI Dhari</span>
-      </a>
-      <nav class="menu" aria-label="Primary">
-        <a href="#platform">Platform</a>
-        <a href="#solutions">Solutions</a>
-        <a href="#customers">Customers</a>
-        <a href="#resources">Resources</a>
-        <a href="#company">Company</a>
-        <a class="demo-btn" href="#contact">Request Demo</a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- HERO -->
-  <div class="container shell reveal">
-    <div class="wave" aria-hidden="true"></div>
-    <section id="home" class="hero">
-      <div class="grid">
-        <!-- Left: exact logo, clickable -->
-        <a href="https://aidhari.ai" target="_blank" rel="noopener" aria-label="Visit AI Dhari (external)">
-                  <img src="images/logo-exact.png" alt="AI Dhari logo small">
-
-        </a>
-        <!-- Right: headline -->
-        <div>
-          <h1>Enterprise Conversational AI Platform</h1>
-          <p class="subtitle">Design, build and deploy intelligent virtual assistants for your contact center and digital experiences. Omnichannel, secure and measurable—powered by LLMs with enterprise guardrails.</p>
-          <div class="ctaRow">
-            <a class="cta" href="#contact" id="demoCta">Request a Demo</a>
-            <a class="cta ghost" href="#platform">See the Platform</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </div>
-
-  <!-- PLATFORM with Tabs -->
-  <section id="platform" class="container reveal">
-    <h2 class="section-title">Platform</h2>
-    <p class="section-sub">Everything you need to build high‑quality assistants at scale—no‑code design studio, LLM orchestration, analytics and governance.</p>
-
-    <div class="tabs" role="tablist">
-      <button class="tab active" role="tab" aria-selected="true" data-tab="studio">Design Studio</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="orchestration">LLM Orchestration</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="omnichannel">Omnichannel</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="analytics">Analytics</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="security">Security</button>
-    </div>
-
-    <div id="panel-studio" class="tab-panel active">
-      <div class="cards about-grid">
-        <div class="card"><h3>Visual Flows</h3><p>Drag‑and‑drop dialogs, intents, entities and forms with versioning.</p></div>
-        <div class="card"><h3>Knowledge</h3><p>Import documents and sites; auto‑index with metadata and access rules.</p></div>
-      </div>
-    </div>
-    <div id="panel-orchestration" class="tab-panel">
-      <div class="cards about-grid">
-        <div class="card"><h3>Prompt Templates</h3><p>Reusable prompts with variables and guardrails.</p></div>
-        <div class="card"><h3>Grounding (RAG)</h3><p>Vector search, reranking and citations to your data.</p></div>
-      </div>
-    </div>
-    <div id="panel-omnichannel" class="tab-panel">
-      <div class="cards about-grid">
-        <div class="card"><h3>Voice & Chat</h3><p>Telephony, web, mobile, WhatsApp, Teams, Slack and more.</p></div>
-        <div class="card"><h3>Agent Handoff</h3><p>Skills‑based routing and transcript handover.</p></div>
-      </div>
-    </div>
-    <div id="panel-analytics" class="tab-panel">
-      <div class="cards about-grid">
-        <div class="card"><h3>Dashboards</h3><p>Containment, CSAT, deflection and savings—export to BI.</p></div>
-        <div class="card"><h3>Quality</h3><p>Turn‑level scoring and evaluation experiments.</p></div>
-      </div>
-    </div>
-    <div id="panel-security" class="tab-panel">
-      <div class="cards about-grid">
-        <div class="card"><h3>Governance</h3><p>RBAC, approvals, audit trails and PII redaction.</p></div>
-        <div class="card"><h3>Compliance</h3><p>SOC2‑ready patterns, encryption and data residency options.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- SOLUTIONS as Accordion -->
-  <section id="solutions" class="container reveal">
-    <h2 class="section-title">Solutions</h2>
-    <p class="section-sub">Open the sections to learn how we reduce handle time and boost CSAT.</p>
-
-    <details open>
-      <summary>Contact Center AI</summary>
-      <p>Voice and chat automation with smart routing and seamless agent handoff.</p>
-    </details>
-    <details>
-      <summary>Customer Experience</summary>
-      <p>Self‑service for onboarding, billing, orders, returns and account help.</p>
-    </details>
-    <details>
-      <summary>Employee Experience</summary>
-      <p>IT, HR and finance assistants that resolve tickets instantly and deflect emails.</p>
-    </details>
-  </section>
-
-  <!-- CUSTOMERS / TRUST -->
-  <section id="customers" class="container reveal">
-    <h2 class="section-title">Trusted by Teams</h2>
-    <p class="section-sub">Join enterprises saving costs and improving CSAT with AI Dhari.</p>
-    <div class="logos">
-      <div></div><div></div><div></div><div></div><div></div><div></div>
-    </div>
-  </section>
-
-  <!-- RESOURCES -->
-  <section id="resources" class="container reveal">
-    <h2 class="section-title">Resources</h2>
-    <p class="section-sub">Guides, playbooks and case studies to kick‑start your AI program.</p>
-    <div class="cards about-grid">
-      <div class="card"><h3>Enterprise Conversational AI Playbook</h3><p>Practical steps to evaluate use cases, pick vendors and measure impact.</p></div>
-      <div class="card"><h3>Responsible AI Checklist</h3><p>Privacy, safety and governance controls for production deployments.</p></div>
-    </div>
-  </section>
-
-  <section id="company" class="container reveal">
-    <h2 class="section-title">Company</h2>
-    <p class="section-sub">AI Dhari is an AI engineering studio based in Bengaluru, working globally.</p>
-  </section>
-
-  <!-- CONTACT with inline validation -->
-  <section id="contact" class="container reveal">
-    <h2 class="section-title">Request a Demo</h2>
-    <p class="section-sub">Tell us about your contact center or digital journey. We’ll reply within one business day.</p>
-    <div class="contact-wrap">
-      <form id="contactForm" novalidate>
-        <label><span>Name</span>
-          <input id="name" name="name" placeholder="Your name" required />
-          <div class="error" id="err-name">Please enter your name.</div>
-        </label>
-        <label><span>Email</span>
-          <input id="email" name="email" type="email" placeholder="Work email" required />
-          <div class="error" id="err-email">Please enter a valid email.</div>
-        </label>
-        <label><span>Company</span>
-          <input id="company" name="company" placeholder="Company" />
-        </label>
-        <label><span>Use case</span>
-          <textarea id="message" name="message" placeholder="Describe the journey you want to automate (e.g., password reset, order status, claims)." required></textarea>
-          <div class="error" id="err-message">Please describe your use case.</div>
-        </label>
-        <button class="cta" type="submit">Send Request</button>
-        <p class="form-note">Prefer a backend? Replace this with your API endpoint or services like Web3Forms.</p>
-        <div class="success" id="ok">Thanks! We received your request. We'll be in touch soon.</div>
-      </form>
-      <aside>
-        <div class="card" style="background:#f8fafc">
-          <h3>Reach us</h3>
-          <p style="margin:6px 0 0;color:#475569">Bengaluru, IN · Mon–Fri</p>
-          <p style="margin:6px 0 0;color:#475569"><a href="mailto:hello@aidhari.ai">hello@aidhari.ai</a></p>
-        </div>
-      </aside>
-    </div>
-  </section>
-
-  <button id="topbtn" class="topbtn" aria-label="Back to top">Top ↑</button>
-
-  <footer>
-    &copy; <span id="year"></span> AI Dhari. All rights reserved.
+<!-- NAV -->
+<header class="topbar">
+<div class="container nav">
+<a aria-label="AI Dhari Home" class="brand" href="#home">
+<img alt="AI Dhari logo small" src="{{ url_for('static', filename='images/logo-exact.png') }}"/>
+<span>AI Dhari</span>
+</a>
+<nav aria-label="Primary" class="menu">
+<a href="#platform">Platform</a>
+<a href="#solutions">Solutions</a>
+<a href="#customers">Customers</a>
+<a href="#resources">Resources</a>
+<a href="#company">Company</a>
+<a class="demo-btn" href="#contact">Request Demo</a>
+</nav>
+</div>
+</header>
+<!-- HERO -->
+<div class="container shell reveal">
+<div aria-hidden="true" class="wave"></div>
+<section class="hero" id="home">
+<div class="grid">
+<!-- Left: exact logo, clickable -->
+<a aria-label="Visit AI Dhari (external)" href="https://aidhari.ai" rel="noopener" target="_blank">
+<img alt="AI Dhari logo" class="logoImg" src="{{ url_for('static', filename='images/logo-exact.png') }}">
+</img></a>
+<!-- Right: headline -->
+<div>
+<h1>Enterprise Conversational AI Platform</h1>
+<p class="subtitle">Design, build and deploy intelligent virtual assistants for your contact center and digital experiences. Omnichannel, secure and measurable—powered by LLMs with enterprise guardrails.</p>
+<div class="ctaRow">
+<a class="cta" href="#contact" id="demoCta">Request a Demo</a>
+<a class="cta ghost" href="#platform">See the Platform</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- PLATFORM with Tabs -->
+<section class="container reveal" id="platform">
+<h2 class="section-title">Platform</h2>
+<p class="section-sub">Everything you need to build high‑quality assistants at scale—no‑code design studio, LLM orchestration, analytics and governance.</p>
+<div class="tabs" role="tablist">
+<button aria-selected="true" class="tab active" data-tab="studio" role="tab">Design Studio</button>
+<button aria-selected="false" class="tab" data-tab="orchestration" role="tab">LLM Orchestration</button>
+<button aria-selected="false" class="tab" data-tab="omnichannel" role="tab">Omnichannel</button>
+<button aria-selected="false" class="tab" data-tab="analytics" role="tab">Analytics</button>
+<button aria-selected="false" class="tab" data-tab="security" role="tab">Security</button>
+</div>
+<div class="tab-panel active" id="panel-studio">
+<div class="cards about-grid">
+<div class="card"><h3>Visual Flows</h3><p>Drag‑and‑drop dialogs, intents, entities and forms with versioning.</p></div>
+<div class="card"><h3>Knowledge</h3><p>Import documents and sites; auto‑index with metadata and access rules.</p></div>
+</div>
+</div>
+<div class="tab-panel" id="panel-orchestration">
+<div class="cards about-grid">
+<div class="card"><h3>Prompt Templates</h3><p>Reusable prompts with variables and guardrails.</p></div>
+<div class="card"><h3>Grounding (RAG)</h3><p>Vector search, reranking and citations to your data.</p></div>
+</div>
+</div>
+<div class="tab-panel" id="panel-omnichannel">
+<div class="cards about-grid">
+<div class="card"><h3>Voice &amp; Chat</h3><p>Telephony, web, mobile, WhatsApp, Teams, Slack and more.</p></div>
+<div class="card"><h3>Agent Handoff</h3><p>Skills‑based routing and transcript handover.</p></div>
+</div>
+</div>
+<div class="tab-panel" id="panel-analytics">
+<div class="cards about-grid">
+<div class="card"><h3>Dashboards</h3><p>Containment, CSAT, deflection and savings—export to BI.</p></div>
+<div class="card"><h3>Quality</h3><p>Turn‑level scoring and evaluation experiments.</p></div>
+</div>
+</div>
+<div class="tab-panel" id="panel-security">
+<div class="cards about-grid">
+<div class="card"><h3>Governance</h3><p>RBAC, approvals, audit trails and PII redaction.</p></div>
+<div class="card"><h3>Compliance</h3><p>SOC2‑ready patterns, encryption and data residency options.</p></div>
+</div>
+</div>
+</section>
+<!-- SOLUTIONS as Accordion -->
+<section class="container reveal" id="solutions">
+<h2 class="section-title">Solutions</h2>
+<p class="section-sub">Open the sections to learn how we reduce handle time and boost CSAT.</p>
+<details open="">
+<summary>Contact Center AI</summary>
+<p>Voice and chat automation with smart routing and seamless agent handoff.</p>
+</details>
+<details>
+<summary>Customer Experience</summary>
+<p>Self‑service for onboarding, billing, orders, returns and account help.</p>
+</details>
+<details>
+<summary>Employee Experience</summary>
+<p>IT, HR and finance assistants that resolve tickets instantly and deflect emails.</p>
+</details>
+</section>
+<!-- CUSTOMERS / TRUST -->
+<section class="container reveal" id="customers">
+<h2 class="section-title">Trusted by Teams</h2>
+<p class="section-sub">Join enterprises saving costs and improving CSAT with AI Dhari.</p>
+<div class="logos">
+<div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
+</section>
+<!-- RESOURCES -->
+<section class="container reveal" id="resources">
+<h2 class="section-title">Resources</h2>
+<p class="section-sub">Guides, playbooks and case studies to kick‑start your AI program.</p>
+<div class="cards about-grid">
+<div class="card"><h3>Enterprise Conversational AI Playbook</h3><p>Practical steps to evaluate use cases, pick vendors and measure impact.</p></div>
+<div class="card"><h3>Responsible AI Checklist</h3><p>Privacy, safety and governance controls for production deployments.</p></div>
+</div>
+</section>
+<section class="container reveal" id="company">
+<h2 class="section-title">Company</h2>
+<p class="section-sub">AI Dhari is an AI engineering studio based in Bengaluru, working globally.</p>
+</section>
+<!-- CONTACT with inline validation -->
+<section class="container reveal" id="contact">
+<h2 class="section-title">Request a Demo</h2>
+<p class="section-sub">Tell us about your contact center or digital journey. We’ll reply within one business day.</p>
+<div class="contact-wrap">
+<form id="contactForm" novalidate="">
+<label><span>Name</span>
+<input id="name" name="name" placeholder="Your name" required=""/>
+<div class="error" id="err-name">Please enter your name.</div>
+</label>
+<label><span>Email</span>
+<input id="email" name="email" placeholder="Work email" required="" type="email"/>
+<div class="error" id="err-email">Please enter a valid email.</div>
+</label>
+<label><span>Company</span>
+<input id="company" name="company" placeholder="Company"/>
+</label>
+<label><span>Use case</span>
+<textarea id="message" name="message" placeholder="Describe the journey you want to automate (e.g., password reset, order status, claims)." required=""></textarea>
+<div class="error" id="err-message">Please describe your use case.</div>
+</label>
+<button class="cta" type="submit">Send Request</button>
+<p class="form-note">Prefer a backend? Replace this with your API endpoint or services like Web3Forms.</p>
+<div class="success" id="ok">Thanks! We received your request. We'll be in touch soon.</div>
+</form>
+<aside>
+<div class="card" style="background:#f8fafc">
+<h3>Reach us</h3>
+<p style="margin:6px 0 0;color:#475569">Bengaluru, IN · Mon–Fri</p>
+<p style="margin:6px 0 0;color:#475569"><a href="mailto:hello@aidhari.ai">hello@aidhari.ai</a></p>
+</div>
+</aside>
+</div>
+</section>
+<button aria-label="Back to top" class="topbtn" id="topbtn">Top ↑</button>
+<footer>
+    © <span id="year"></span> AI Dhari. All rights reserved.
   </footer>
-
-  <script>
+<script>
     // Footer year
     document.getElementById('year').textContent=new Date().getFullYear();
 
@@ -322,4 +330,3 @@
   </script>
 </body>
 </html>
-
