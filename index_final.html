@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>AI Dhari — Enterprise Conversational AI Platform</title>
+<meta content="AI Dhari is an enterprise conversational AI platform for contact centers and digital experiences. Design, build and deploy intelligent virtual assistants with strong security and governance." name="description"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&amp;display=swap" rel="stylesheet"/>
+<style>
+    :root{
+      --text:#0f172a;--muted:#475569;--soft:#e2e8f0;--brand1:#2b6cb0;--brand2:#3ba3ff;--radius:24px;--shadow:0 12px 40px rgba(2,6,23,.08);
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:Inter,system-ui,Arial,sans-serif;color:var(--text);background:#fff;line-height:1.6}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(var(--maxw),92vw);margin:0 auto}
+
+    /* Top Nav */
+    .topbar{position:sticky;top:0;z-index:50;background:#ffffffd9;backdrop-filter:saturate(1.1) blur(8px);border-bottom:1px solid #f1f5f9}
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:10px}
+    .brand img{width:36px;height:36px;display:block}
+    .brand span{font-weight:800;font-size:1.15rem}
+    .menu{display:flex;gap:24px;align-items:center}
+    .menu a{font-weight:700;color:#0b1b37;opacity:.85;position:relative}
+    .menu a.active{opacity:1}
+    .menu a.active::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:3px;border-radius:3px;background:linear-gradient(135deg,var(--brand2),var(--brand1))}
+    .demo-btn{padding:10px 16px;border-radius:12px;background:linear-gradient(135deg,var(--brand2),var(--brand1));color:#fff;font-weight:800}
+
+    /* Hero card */
+    .shell{margin:18px auto 0;background:#fff;border:1px solid #f1f5f9;border-radius:var(--radius);box-shadow:var(--shadow);position:relative;overflow:hidden}
+    .wave{position:absolute;right:-18%;bottom:-30%;width:80%;height:85%;background:linear-gradient(135deg,#eef6ff,#f6f9fe);transform:rotate(-8deg);border-radius:40px;z-index:0}
+    .hero{position:relative;z-index:1;padding:48px 28px 80px}
+    .grid{display:grid;grid-template-columns:420px 1fr;gap:48px;align-items:center}
+    .logoImg{width:100%;height:auto;display:block}
+    h1{font-size:clamp(36px,5vw,64px);line-height:1.08;margin:0 0 10px;font-weight:800;letter-spacing:-0.02em}
+    .subtitle{font-size:clamp(16px,1.8vw,26px);line-height:1.5;color:#1e2b4d;margin:0 0 24px;max-width:760px}
+    .ctaRow{display:flex;gap:14px;flex-wrap:wrap}
+    .cta{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:14px;background:linear-gradient(135deg,var(--brand2),var(--brand1));color:#fff;font-weight:800;border:0;box-shadow:0 8px 20px rgba(59,163,255,.25);transition:transform .15s ease}
+    .cta:hover{transform:translateY(-1px)}
+    .ghost{background:#f1f5f9;color:#0b1b37;border:1px solid #e2e8f0}
+
+    /* Reveal on scroll */
+    .reveal{opacity:0;transform:translateY(14px);transition:opacity .5s ease, transform .5s ease}
+    .reveal.visible{opacity:1;transform:none}
+
+    /* Tabs */
+    .tabs{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 18px}
+    .tab{padding:10px 14px;border:1px solid #e2e8f0;border-radius:12px;background:#f8fafc;font-weight:600;cursor:pointer}
+    .tab.active{background:linear-gradient(135deg,var(--brand2),var(--brand1));color:#fff;border-color:transparent}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+
+    /* Accordion */
+    details{border:1px solid #eef2f7;background:#f8fafc;border-radius:12px;padding:14px}
+    details+details{margin-top:10px}
+    details>summary{cursor:pointer;font-weight:700;list-style:none}
+    details[open]{background:#f3f7fd}
+
+    /* Sections */
+    section{padding:80px 0}
+    h2.section-title{font-size:clamp(26px,2.4vw,32px);margin:0 0 8px;letter-spacing:-.01em}
+    p.section-sub{color:var(--muted);margin:0 0 22px;max-width:860px}
+    .cards{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .card{grid-column:span 4;background:#f8fafc;border:1px solid #eef2f7;border-radius:16px;padding:18px}
+    .card h3{margin:0 0 6px;font-size:1.05rem}
+    .card p,.list{font-size:1rem}
+    .list{margin:10px 0 0 18px;color:#475569}
+    .about-grid .card{grid-column:span 6}
+
+    /* Logos row */
+    .logos{display:grid;grid-template-columns:repeat(6,1fr);gap:18px;align-items:center;opacity:.8}
+    .logos div{height:40px;background:#f1f5f9;border-radius:10px}
+
+    /* Contact */
+    form{display:grid;gap:14px;max-width:640px}
+    label span{display:block;font-weight:600;margin-bottom:6px}
+    input,textarea{width:100%;padding:12px 14px;border-radius:12px;border:1px solid #e2e8f0;font:inherit;font-size:1rem}
+    input:focus,textarea:focus{outline:2px solid rgba(59,163,255,.35);border-color:transparent}
+    textarea{min-height:130px;resize:vertical}
+    .contact-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:22px;align-items:start}
+    .form-note{color:#64748b;font-size:.9rem}
+    .error{color:#b91c1c;font-size:.9rem;display:none}
+    .success{background:#ecfdf5;color:#065f46;padding:10px 12px;border-radius:10px;margin-top:10px;display:none}
+
+    /* Back-to-top */
+    .topbtn{position:fixed;right:16px;bottom:16px;padding:10px 14px;border-radius:12px;background:#0f172a;color:#fff;font-weight:700;opacity:.85;cursor:pointer;display:none}
+
+    footer{border-top:1px solid var(--soft);padding:22px 0 44px;color:#64748b;text-align:center;font-size:.95rem}
+
+    @media (max-width:960px){
+      .grid{grid-template-columns:1fr;gap:22px}
+      .menu{gap:16px}
+      .about-grid .card,.cards .card{grid-column:span 12}
+      .contact-wrap{grid-template-columns:1fr}
+      .logos{grid-template-columns:repeat(3,1fr)}
+    }
+  </style>
+<style>
+/* Header Logo Fix */
+header.topbar {
+  display: flex;
+  align-items: center;
+}
+
+header.topbar img {
+  height: 50px;       /* resize logo */
+  width: auto;        /* keep aspect ratio */
+  vertical-align: middle;
+  margin-right: 10px; /* space from text */
+}
+
+/* Hero Logo Fix */
+.logoImg {
+  display: block;
+  margin: 0 auto 20px auto; /* center horizontally with spacing */
+  max-width: 250px;         /* logo size */
+  height: auto;             /* keep aspect ratio */
+}
+</style></head>
+<body>
+<!-- NAV -->
+<header class="topbar">
+<div class="container nav">
+<a aria-label="AI Dhari Home" class="brand" href="#home">
+<img alt="AI Dhari logo small" src="{{ url_for('static', filename='images/logo-exact.png') }}"/>
+<span>AI Dhari</span>
+</a>
+<nav aria-label="Primary" class="menu">
+<a href="#platform">Platform</a>
+<a href="#solutions">Solutions</a>
+<a href="#customers">Customers</a>
+<a href="#resources">Resources</a>
+<a href="#company">Company</a>
+<a class="demo-btn" href="#contact">Request Demo</a>
+</nav>
+</div>
+</header>
+<!-- HERO -->
+<div class="container shell reveal">
+<div aria-hidden="true" class="wave"></div>
+<section class="hero" id="home">
+<div class="grid">
+<!-- Left: exact logo, clickable -->
+<a aria-label="Visit AI Dhari (external)" href="https://aidhari.ai" rel="noopener" target="_blank">
+<img alt="AI Dhari logo" class="logoImg" src="{{ url_for('static', filename='images/logo-exact.png') }}">
+</img></a>
+<!-- Right: headline -->
+<div>
+<h1>Enterprise Conversational AI Platform</h1>
+<p class="subtitle">Design, build and deploy intelligent virtual assistants for your contact center and digital experiences. Omnichannel, secure and measurable—powered by LLMs with enterprise guardrails.</p>
+<div class="ctaRow">
+<a class="cta" href="#contact" id="demoCta">Request a Demo</a>
+<a class="cta ghost" href="#platform">See the Platform</a>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- PLATFORM with Tabs -->
+<section class="container reveal" id="platform">
+<h2 class="section-title">Platform</h2>
+<p class="section-sub">Everything you need to build high‑quality assistants at scale—no‑code design studio, LLM orchestration, analytics and governance.</p>
+<div class="tabs" role="tablist">
+<button aria-selected="true" class="tab active" data-tab="studio" role="tab">Design Studio</button>
+<button aria-selected="false" class="tab" data-tab="orchestration" role="tab">LLM Orchestration</button>
+<button aria-selected="false" class="tab" data-tab="omnichannel" role="tab">Omnichannel</button>
+<button aria-selected="false" class="tab" data-tab="analytics" role="tab">Analytics</button>
+<button aria-selected="false" class="tab" data-tab="security" role="tab">Security</button>
+</div>
+<div class="tab-panel active" id="panel-studio">
+<div class="cards about-grid">
+<div class="card"><h3>Visual Flows</h3><p>Drag‑and‑drop dialogs, intents, entities and forms with versioning.</p></div>
+<div class="card"><h3>Knowledge</h3><p>Import documents and sites; auto‑index with metadata and access rules.</p></div>
+</div>
+</div>
+<div class="tab-panel" id="panel-orchestration">
+<div class="cards about-grid">
+<div class="card"><h3>Prompt Templates</h3><p>Reusable prompts with variables and guardrails.</p></div>
+<div class="card"><h3>Grounding (RAG)</h3><p>Vector search, reranking and citations to your data.</p></div>
+</div>
+</div>
+<div class="tab-panel" id="panel-omnichannel">
+<div class="cards about-grid">
+<div class="card"><h3>Voice &amp; Chat</h3><p>Telephony, web, mobile, WhatsApp, Teams, Slack and more.</p></div>
+<div class="card"><h3>Agent Handoff</h3><p>Skills‑based routing and transcript handover.</p></div>
+</div>
+</div>
+<div class="tab-panel" id="panel-analytics">
+<div class="cards about-grid">
+<div class="card"><h3>Dashboards</h3><p>Containment, CSAT, deflection and savings—export to BI.</p></div>
+<div class="card"><h3>Quality</h3><p>Turn‑level scoring and evaluation experiments.</p></div>
+</div>
+</div>
+<div class="tab-panel" id="panel-security">
+<div class="cards about-grid">
+<div class="card"><h3>Governance</h3><p>RBAC, approvals, audit trails and PII redaction.</p></div>
+<div class="card"><h3>Compliance</h3><p>SOC2‑ready patterns, encryption and data residency options.</p></div>
+</div>
+</div>
+</section>
+<!-- SOLUTIONS as Accordion -->
+<section class="container reveal" id="solutions">
+<h2 class="section-title">Solutions</h2>
+<p class="section-sub">Open the sections to learn how we reduce handle time and boost CSAT.</p>
+<details open="">
+<summary>Contact Center AI</summary>
+<p>Voice and chat automation with smart routing and seamless agent handoff.</p>
+</details>
+<details>
+<summary>Customer Experience</summary>
+<p>Self‑service for onboarding, billing, orders, returns and account help.</p>
+</details>
+<details>
+<summary>Employee Experience</summary>
+<p>IT, HR and finance assistants that resolve tickets instantly and deflect emails.</p>
+</details>
+</section>
+<!-- CUSTOMERS / TRUST -->
+<section class="container reveal" id="customers">
+<h2 class="section-title">Trusted by Teams</h2>
+<p class="section-sub">Join enterprises saving costs and improving CSAT with AI Dhari.</p>
+<div class="logos">
+<div></div><div></div><div></div><div></div><div></div><div></div>
+</div>
+</section>
+<!-- RESOURCES -->
+<section class="container reveal" id="resources">
+<h2 class="section-title">Resources</h2>
+<p class="section-sub">Guides, playbooks and case studies to kick‑start your AI program.</p>
+<div class="cards about-grid">
+<div class="card"><h3>Enterprise Conversational AI Playbook</h3><p>Practical steps to evaluate use cases, pick vendors and measure impact.</p></div>
+<div class="card"><h3>Responsible AI Checklist</h3><p>Privacy, safety and governance controls for production deployments.</p></div>
+</div>
+</section>
+<section class="container reveal" id="company">
+<h2 class="section-title">Company</h2>
+<p class="section-sub">AI Dhari is an AI engineering studio based in Bengaluru, working globally.</p>
+</section>
+<!-- CONTACT with inline validation -->
+<section class="container reveal" id="contact">
+<h2 class="section-title">Request a Demo</h2>
+<p class="section-sub">Tell us about your contact center or digital journey. We’ll reply within one business day.</p>
+<div class="contact-wrap">
+<form id="contactForm" novalidate="">
+<label><span>Name</span>
+<input id="name" name="name" placeholder="Your name" required=""/>
+<div class="error" id="err-name">Please enter your name.</div>
+</label>
+<label><span>Email</span>
+<input id="email" name="email" placeholder="Work email" required="" type="email"/>
+<div class="error" id="err-email">Please enter a valid email.</div>
+</label>
+<label><span>Company</span>
+<input id="company" name="company" placeholder="Company"/>
+</label>
+<label><span>Use case</span>
+<textarea id="message" name="message" placeholder="Describe the journey you want to automate (e.g., password reset, order status, claims)." required=""></textarea>
+<div class="error" id="err-message">Please describe your use case.</div>
+</label>
+<button class="cta" type="submit">Send Request</button>
+<p class="form-note">Prefer a backend? Replace this with your API endpoint or services like Web3Forms.</p>
+<div class="success" id="ok">Thanks! We received your request. We'll be in touch soon.</div>
+</form>
+<aside>
+<div class="card" style="background:#f8fafc">
+<h3>Reach us</h3>
+<p style="margin:6px 0 0;color:#475569">Bengaluru, IN · Mon–Fri</p>
+<p style="margin:6px 0 0;color:#475569"><a href="mailto:hello@aidhari.ai">hello@aidhari.ai</a></p>
+</div>
+</aside>
+</div>
+</section>
+<button aria-label="Back to top" class="topbtn" id="topbtn">Top ↑</button>
+<footer>
+    © <span id="year"></span> AI Dhari. All rights reserved.
+  </footer>
+<script>
+    // Footer year
+    document.getElementById('year').textContent=new Date().getFullYear();
+
+    // Reveal on scroll
+    const observer=new IntersectionObserver(entries=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('visible'); observer.unobserve(e.target);} });
+    },{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+
+    // Active menu highlighting
+    const sections=['home','platform','solutions','customers','resources','company','contact'];
+    const links=[...document.querySelectorAll('.menu a')];
+    const spy=new IntersectionObserver(es=>{
+      es.forEach(en=>{
+        if(en.isIntersecting){
+          links.forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+en.target.id));
+        }
+      })
+    },{rootMargin:'-50% 0px -45% 0px',threshold:0});
+    sections.forEach(id=>{const el=document.getElementById(id); if(el) spy.observe(el)});
+
+    // Tabs logic
+    const tabBtns=document.querySelectorAll('.tab');
+    tabBtns.forEach(btn=>btn.addEventListener('click',()=>{
+      tabBtns.forEach(b=>{b.classList.toggle('active',b===btn); b.setAttribute('aria-selected', b===btn)});
+      document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+      document.getElementById('panel-'+btn.dataset.tab).classList.add('active');
+    }));
+
+    // Form validation (inline) + fake success
+    const form=document.getElementById('contactForm');
+    form.addEventListener('submit',e=>{
+      e.preventDefault();
+      let ok=true;
+      const emailRe=/^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      const show=(id,cond)=>{document.getElementById(id).style.display=cond?'none':'block'; if(!cond) ok=false;};
+      show('err-name', !!document.getElementById('name').value.trim());
+      show('err-email', emailRe.test(document.getElementById('email').value.trim()));
+      show('err-message', !!document.getElementById('message').value.trim());
+      if(ok){ document.getElementById('ok').style.display='block'; form.reset(); }
+    });
+
+    // Back-to-top button
+    const topbtn=document.getElementById('topbtn');
+    window.addEventListener('scroll',()=>{
+      topbtn.style.display = window.scrollY>700 ? 'block' : 'none';
+    });
+    topbtn.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+  </script>
+</body>
+</html>
